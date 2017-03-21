@@ -19,8 +19,9 @@
 	export default{
 		name: 'source-selection',
 		data(){
-			return{sources:[],
-			source:"",
+			return{
+				sources:[],
+				source:"",
 			}
 		},
 		created:function(){
@@ -34,9 +35,13 @@
 				for(var i=0;i<this.sources.length;i++){
 					if(this.sources[i].id===e.target.value){
 						this.source = this.sources[i];
-						return;
+						break;
 					}
 				}
+				console.log("Source Change singal emitted");
+				console.log(e.target.value);
+				this.$emit('sourceChanged',e.target.value);			//because this is a child, we emit signal to its parent component
+				//and thus it receives the signal and acts accordingly
 			}
 		}
 	}

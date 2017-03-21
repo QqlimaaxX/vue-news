@@ -22,6 +22,8 @@ export default {
     },
     methods:{
       sourceChanged:function(source) {
+          console.log("Signal Received")
+          console.log(source);
           this.source = source;
         }
       }
