@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+  <div id="app" class="container">
+    <source-selection v-on:sourceChanged="sourceChanged"></source-selection>
+    <news-list :source="source"></news-list>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import SourceSelection from './components/SourceSelection'
+import NewsList from './components/NewsList'
 
 export default {
-  name: 'app',
-  components: {
-    Hello
+    name: 'app',
+    components:{
+      SourceSelection,
+      NewsList
+    },
+    data(){
+      return{
+        source:"",
+      }
+    },
+    methods:{
+      sourceChanged:function(source) {
+          this.source = source;
+        }
+      }
   }
-}
+
 </script>
 
 <style>
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    padding-top: 20px;
 }
+
 </style>
