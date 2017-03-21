@@ -54,5 +54,12 @@
 </script>
 
 <style scoped>
-
+	.media-object{
+		width: 128px;
+		padding:10px;
+	}
+	.media{
+		border-top: 1px solid lightgrey;
+		padding-top: 20px;
+	}
 </style>
