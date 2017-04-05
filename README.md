@@ -1,6 +1,6 @@
 # vue-news
 
->A Vue.js project
+>VueNews uses [https://newsapi.org/](NewsApi) to fetch news posts/articles from over more than 50 news webpages.
 
 >Author - Mohit Karangiya
 
